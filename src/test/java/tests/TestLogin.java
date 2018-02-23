@@ -13,6 +13,7 @@ public class TestLogin {
 
     @Before
     public void setUp() {
+        System.setProperty("webdriver.gecko.driver", "/Users/ibnezabed/Desktop/selenium-init-java-master/geckodriver");
         driver = new FirefoxDriver();
     }
 
