@@ -27,14 +27,14 @@ public class TestLogin {
         login.with("tomsmith", "SuperSecretPassword!");
         Thread.sleep(2000);
         assertTrue("success message not present",
-                driver.findElement(By.cssSelector(".flash.success")).isDisplayed());
+                login.successMessagePresent());
     }
 
     @Test
     public void failed() throws InterruptedException {
         login.with("tomsmith", "badpassword");
         Thread.sleep(2000);
-        assertTrue("failure message wasn't present after wrong creds", login.failureMessagePresent());
+        assertFalse("failure message wasn't present after wrong creds", login.successMessagePresent());
     }
 
     @After
