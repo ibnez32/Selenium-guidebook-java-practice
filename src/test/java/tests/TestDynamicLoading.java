@@ -5,7 +5,8 @@ import org.junit.Before;
 import org.junit.After;
 import static org.junit.Assert.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver; import pageobjects.DynamicLoading;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import pageobjects.DynamicLoading;
 
 public class TestDynamicLoading {
     private WebDriver driver;
@@ -32,6 +33,7 @@ public class TestDynamicLoading {
     }
 
     @After
-    public void tearDown() { driver.quit();
+    public void tearDown() {
+        driver.quit();
     }
 }
