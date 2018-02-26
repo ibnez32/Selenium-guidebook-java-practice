@@ -4,6 +4,9 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Base {
 
@@ -39,5 +42,23 @@ public class Base {
         } catch (org.openqa.selenium.NoSuchElementException exception) {
             return false;
         }
+    }
+
+    // ... - means its optional, so timeout is optional
+    public Boolean waitForisDisplayed(By locator, Integer... timeout) {
+        try {
+            waitFor(ExpectedConditions.visibilityOfElementLocated(locator),
+                (timeout.length > 0 ? timeout[0] : null));
+        }
+        catch (org.openqa.selenium.TimeoutException exception) {
+            return false;
+        }
+        return true;
+    }
+
+    private void waitFor(ExpectedCondition<WebElement> condition, Integer timeout) {
+        timeout = timeout != null ? timeout : 5;
+        WebDriverWait wait = new WebDriverWait(driver, timeout);
+        wait.until(condition);
     }
 }
