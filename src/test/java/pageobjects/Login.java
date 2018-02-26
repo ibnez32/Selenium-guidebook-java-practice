@@ -16,7 +16,7 @@ public class Login extends Base {
 
     public Login(WebDriver driver) {
         super(driver);
-        visit("http://the-internet.herokuapp.com/login");
+        visit("/login");
         // assertions are typically in the tests folder, exception to rule
         // Makes sure the selenium is in the right place before proceeding
         // Ensures that the tests will only proceed if the login form is present

@@ -2,6 +2,7 @@ package pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import tests.Config;
 
 public class DynamicLoading extends Base {
 
@@ -13,7 +14,7 @@ public class DynamicLoading extends Base {
     }
 
     public void loadExample(String exampleNumber) {
-        visit("http://the-internet.herokuapp.com/dynamic_loading/" + exampleNumber);
+        visit("/dynamic_loading/" + exampleNumber);
         click(startButton);
     }
 
