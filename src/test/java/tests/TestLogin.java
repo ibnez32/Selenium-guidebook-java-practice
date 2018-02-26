@@ -2,23 +2,18 @@ package tests;
 
 import org.junit.Test;
 import org.junit.Before;
-import org.junit.After;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import pageobjects.Login;
 
 import static org.junit.Assert.*;
 
-public class TestLogin {
+public class TestLogin extends Base {
 
-    private WebDriver driver;
     private Login login;
 
     @Before
     public void setUp() {
         System.setProperty("webdriver.gecko.driver", "/Users/ibnezabed/Desktop/selenium-init-java-master/geckodriver");
-        driver = new FirefoxDriver();
         login = new Login(driver);
     }
 
@@ -35,10 +30,5 @@ public class TestLogin {
         login.with("tomsmith", "badpassword");
         Thread.sleep(2000);
         assertFalse("failure message wasn't present after wrong creds", login.successMessagePresent());
-    }
-
-    @After
-    public void tearDown() {
-        driver.quit();
     }
 }

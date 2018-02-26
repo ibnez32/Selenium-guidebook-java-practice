@@ -2,19 +2,14 @@ package tests;
 
 import org.junit.Test;
 import org.junit.Before;
-import org.junit.After;
 import static org.junit.Assert.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import pageobjects.DynamicLoading;
 
-public class TestDynamicLoading {
-    private WebDriver driver;
+public class TestDynamicLoading extends Base {
     private DynamicLoading dynamicLoading;
 
     @Before
     public void setUp() {
-        driver = new FirefoxDriver();
         dynamicLoading = new DynamicLoading(driver);
     }
 
@@ -32,8 +27,4 @@ public class TestDynamicLoading {
                 dynamicLoading.finishTextPresent());
     }
 
-    @After
-    public void tearDown() {
-        driver.quit();
-    }
 }
