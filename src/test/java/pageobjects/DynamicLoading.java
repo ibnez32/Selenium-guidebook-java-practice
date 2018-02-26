@@ -18,7 +18,7 @@ public class DynamicLoading extends Base {
     }
 
     public Boolean finishTextPresent() {
-        return waitForIsDisplayed(finishText, 10);
+        return waitForisDisplayed(finishText, 10);
     }
 
 }
