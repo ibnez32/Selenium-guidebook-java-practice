@@ -29,6 +29,9 @@ public class TestLogin extends Base {
     public void failed() throws InterruptedException {
         login.with("tomsmith", "badpassword");
         Thread.sleep(2000);
-        assertFalse("failure message wasn't present after wrong creds", login.successMessagePresent());
+        assertTrue("failure message wasn't present after providing bogus credentials",
+                login.failureMessagePresent());
+        assertFalse("success message was present after providing bogus credentials",
+                login.successMessagePresent());
     }
 }
