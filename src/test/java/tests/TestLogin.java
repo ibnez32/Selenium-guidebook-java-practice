@@ -13,7 +13,6 @@ public class TestLogin extends Base {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.gecko.driver", "/Users/ibnezabed/Desktop/selenium-init-java-master/geckodriver");
         login = new Login(driver);
     }
 
