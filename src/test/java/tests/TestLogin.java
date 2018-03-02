@@ -2,11 +2,14 @@ package tests;
 
 import org.junit.Test;
 import org.junit.Before;
+import org.junit.experimental.categories.Category;
 import org.openqa.selenium.By;
 import pageobjects.Login;
+import tests.groups.*;
 
 import static org.junit.Assert.*;
 
+@Category(Shallow.class)
 public class TestLogin extends Base {
 
     private Login login;
