@@ -6,10 +6,11 @@ import static org.junit.Assert.*;
 
 import org.junit.experimental.categories.Category;
 import pageobjects.DynamicLoading;
+import tests.groups.All;
 import tests.groups.Deep;
 
 // Categories can also be done at the class level
-@Category(Deep.class)
+@Category({Deep.class, All.class})
 public class TestDynamicLoading extends Base {
     private DynamicLoading dynamicLoading;
 

@@ -9,7 +9,7 @@ import tests.groups.*;
 
 import static org.junit.Assert.*;
 
-@Category(Shallow.class)
+@Category({Shallow.class, All.class})
 public class TestLogin extends Base {
 
     private Login login;

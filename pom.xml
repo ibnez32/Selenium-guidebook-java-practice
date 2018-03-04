@@ -29,8 +29,9 @@
 
   <!-- Maven Surefire plugin -->
   <properties>
-      <groups>tests.groups.Shallow</groups>
+      <groups>tests.groups.All</groups>
   </properties>
+
   <build>
     <pluginManagement>
       <plugins>
